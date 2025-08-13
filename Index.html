@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Freight Pricing Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Freight Pricing Calculator</h1>
+
+  <label for="shipmentType">Shipment Type:</label>
+  <select id="shipmentType" onchange="toggleFlow()">
+    <option value="flowA">Flow A – Direct Delivery</option>
+    <option value="flowB">Flow B – Partner Load Support</option>
+  </select>
+
+  <div id="partnerSection" style="display:none;">
+    <label for="partner">Partner:</label>
+    <select id="partner">
+      <option value="Mobutolin">Mobutolin</option>
+      <option value="Jays">Jays</option>
+    </select>
+  </div>
+
+  <label>Length (cm): <input type="number" id="length"></label>
+  <label>Width (cm): <input type="number" id="width"></label>
+  <label>Height (cm): <input type="number" id="height"></label>
+  <label>Actual Weight (kg): <input type="number" id="actualWeight"></label>
+  <label>Destination City: <input type="text" id="destination"></label>
+  <label>Zone (1–5): <input type="number" id="zone"></label>
+
+  <label>Handling Fee ($): <input type="number" id="handlingFee" value="10"></label>
+  <label>Fuel Surcharge (%): <input type="number" id="fuelPercent" value="15"></label>
+  <label>Add-ons ($): <input type="number" id="addOns" value="5"></label>
+
+  <button onclick="calculate()">Calculate Total Cost</button>
+
+  <h2>Results</h2>
+  <div id="results"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
